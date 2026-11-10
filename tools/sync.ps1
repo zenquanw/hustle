@@ -1,4 +1,4 @@
-# 一键同步：把当前所有改动提交并推送到 GitHub
+﻿# 一键同步：把当前所有改动提交并推送到 GitHub
 # 用法：
 #   VSCode 里按 Ctrl+Shift+B（会提示输入说明）
 #   或在 PowerShell 里运行： .\tools\sync.ps1 -Message "练习：读取 Excel"

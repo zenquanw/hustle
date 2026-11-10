@@ -23,4 +23,4 @@ VSCode 的 Python 解释器已指向 conda 环境 `hustle`（Python 3.11 · pand
 
 - `__pycache__`、`.ipynb_checkpoints`、`.env` 等已被 `.gitignore` 排除，不会推上去
 - 这是**公开仓库**：密码、密钥、身份证号、真实数据不要写进代码里
-- `hello_pandas.py` 只是能跑通的起点，随便改或删
+- `hello_pandas.py`（环境自检）、`excel_roundtrip.py`（pandas + openpyxl 往返）只是能跑通的起点，随便改或删

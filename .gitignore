@@ -12,3 +12,6 @@ Thumbs.db
 *.tmp
 .pytest_cache/
 .mypy_cache/
+
+# 练习脚本的运行产物（每次运行都会重新生成）
+out.csv

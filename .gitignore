@@ -4,4 +4,11 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .env
+.env*
+*.pem
+*.key
 *.log
+~$*
+*.tmp
+.pytest_cache/
+.mypy_cache/

@@ -1,0 +1,14 @@
+{
+  // 提交后自动 push 到 GitHub —— 不用再手动点「同步更改」
+  "git.postCommitCommand": "push",
+  // 没暂存时，提交自动带上全部改动（含新建的练习文件）
+  "git.enableSmartCommit": true,
+  "git.smartCommitChanges": "all",
+  // 同步时不再弹确认框
+  "git.confirmSync": false,
+  // 自动获取远程最新状态
+  "git.autofetch": true,
+  // 停止编辑 2 秒后自动保存
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 2000
+}

@@ -6,4 +6,3 @@ df = pd.DataFrame({
 print(df.shape)
 print(df.head())
 df.to_csv("out.csv", index=False)
-1

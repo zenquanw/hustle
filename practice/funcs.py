@@ -75,5 +75,5 @@ def count_lines(filename):
 print(count_lines(__file__))
 
 def clean_space(s):
-    return s.strip()
+    return "".join( s.split())
 print(clean_space('  1   hello     world     '))

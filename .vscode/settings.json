@@ -10,5 +10,7 @@
   "git.autofetch": true,
   // 停止编辑 2 秒后自动保存
   "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 2000
+  "files.autoSaveDelay": 2000,
+  // Code Runner 的运行结果显示到集成终端（默认只送到「输出」面板）
+  "code-runner.runInTerminal": true
 }

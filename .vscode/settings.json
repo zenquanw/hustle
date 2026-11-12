@@ -12,5 +12,7 @@
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 2000,
   // Code Runner 的运行结果显示到集成终端（默认只送到「输出」面板）
-  "code-runner.runInTerminal": true
+  "code-runner.runInTerminal": true,
+  // 以脚本所在目录为工作目录，相对路径才找得到同目录下的 data/
+  "code-runner.fileDirectoryAsCwd": true
 }

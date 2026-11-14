@@ -25,8 +25,8 @@ def load(path):
     for enc in ("utf-8","gbk"):
         try:
             return pd.read_csv(path,encoding=enc)
-        except FileExistsError:
-            print(f"找不到文件:(path)")
+        except FileNotFoundError:
+            print(f"找不到文件:{path}")
             return None
         except UnicodeDecodeError:
             continue
@@ -41,10 +41,6 @@ def report(df):
     print("每列空缺：")
     print(df.isna().sum())
 
-
-    print("行数", df.shape[0], "列数", df.shape[1])
-    print("每列空缺：")
-    print(df.isna().sum())
 
     print("\n字段类型：")
     df.info()                       # info() 自带打印，别套 print

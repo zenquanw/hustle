@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 
 def load(path):
@@ -59,7 +60,7 @@ def report(df):
 
 
 if __name__ == "__main__":
-    df = load("practice/data/sample_gbk.csv")
+    df = load(Path(__file__).parent / "data" / "sample_gbk.csv")
     if df is not None:
         report(df)
 

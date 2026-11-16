@@ -2,6 +2,21 @@
 
 平时在 VSCode 里练的 `.py`、`.ipynb` 都放这个文件夹（也可以按日期/主题再建子文件夹）。
 
+## 每日脚本
+
+在仓库根目录 `hustle/` 下打开终端，直接跑：
+
+```bash
+python practice/read_csv.py    # 读 sample_gbk.csv，打印表结构 / 统计 / 筛选结果
+python practice/clean.py       # 清洗数据，生成 by_dept.csv、by_day.csv、quality.csv
+python practice/load_db.py     # 把 sample.csv 灌进 SQLite，建 sales 表
+```
+
+- 输出都落在 `practice/data/`；`query.sql` 是 `sales` 表的五个查询。
+- 三个脚本都用 `__file__` 定位数据，换到别的目录运行也不会找不到文件。
+- `clean.py` 可以接一个别的 csv 路径：`python practice/clean.py practice/data/sample_gbk.csv`。
+- `quality.csv` 的「原始缺失 / 清洗后缺失」对比的是清洗前后同一张表，部门那行应是 2 / 0。
+
 ## 写完后怎么进 GitHub
 
 **方式 A：提交即自动推送**（已配好，推荐）

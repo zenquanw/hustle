@@ -16,7 +16,10 @@ def clean(df):
     return df.drop_duplicates()
 
 
-def tables(df, out=DATA):
+def tables(df, raw=None, out=DATA):
+    """df = 清洗后的表；raw = 清洗前的原始表，用来对比缺失有没有变少。"""
+    if raw is None:
+        raw = df
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
 
@@ -28,8 +31,10 @@ def tables(df, out=DATA):
     day.columns = ["日期", "金额"]
     day.to_csv(out / "by_day.csv", index=False, encoding="utf-8-sig")
 
+    # 在清洗前先留一份原始表，才能看出「部门 2 → 0」这种改善
     q = pd.DataFrame({"列": df.columns,
-                      "缺失数": [df[c].isna().sum() for c in df.columns]})
+                      "原始缺失": [raw[c].isna().sum() for c in df.columns],
+                      "清洗后缺失": [df[c].isna().sum() for c in df.columns]})
     q.to_csv(out / "quality.csv", index=False, encoding="utf-8-sig")
 
 
@@ -37,5 +42,5 @@ if __name__ == "__main__":
     path = sys.argv[1] if len(sys.argv) > 1 else DATA / "sample.csv"
     df = load(path)
     if df is not None:
-        tables(clean(df))
+        tables(clean(df), raw=df)
         print("已生成 3 个文件：by_dept.csv / by_day.csv / quality.csv")

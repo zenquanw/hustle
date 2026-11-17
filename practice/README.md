@@ -10,10 +10,13 @@
 python practice/read_csv.py    # 读 sample_gbk.csv，打印表结构 / 统计 / 筛选结果
 python practice/clean.py       # 清洗数据，生成 by_dept.csv、by_day.csv、quality.csv
 python practice/load_db.py     # 把 sample.csv 灌进 SQLite，建 sales 表
+python practice/load_dept.py   # 把 dept.csv 灌进同一个库，建 dept 表
+python practice/budget_report.py  # JOIN 两张表，生成 budget_vs_actual.csv
 ```
 
-- 输出都落在 `practice/data/`；`query.sql` 是 `sales` 表的五个查询。
-- 三个脚本都用 `__file__` 定位数据，换到别的目录运行也不会找不到文件。
+- 输出都落在 `practice/data/`；`query.sql` 是单表五问，`budget.sql` 是 JOIN / 子查询，用 SQLite 客户端逐条选中执行。
+- 上面脚本都用 `__file__` 定位数据，换到别的目录运行也不会找不到文件。
+- 跑 `budget_report.py` 之前，要先跑 `load_db.py` 和 `load_dept.py` 把两张表都建好。
 - `clean.py` 可以接一个别的 csv 路径：`python practice/clean.py practice/data/sample_gbk.csv`。
 - `quality.csv` 的「原始缺失 / 清洗后缺失」对比的是清洗前后同一张表，部门那行应是 2 / 0。
 

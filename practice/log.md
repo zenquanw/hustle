@@ -45,3 +45,10 @@
 3. 明天第一件事：学 JOIN 和子查询，用两张表做关联
 4. 实际投入：待补
 5. 实际产物：hustle.db、load_db.py、query.sql，github.com/zenquanw/hustle
+
+2026-11-17
+1. 今天做的：两张表对一对。dept.csv 四行预算灌进 hustle.db；三种 JOIN 各跑一次；budget_vs_actual.csv 出 4 行（预算 2900 / 实际 661 / 差额 2239 / 执行率 22.8%，技术部显示 0）
+2. 卡住的：JOIN 是精确匹配，sales 里部门带空格（' 办公室 '），不加 TRIM 就匹配不上、办公室会少 120.5；执行卡说子查询「应该出 4 笔」，但均值 158.17 下只有 300、200 两笔比它高，卡片和自己的数字对不上，另补了「金额最高 4 笔」的写法
+3. 明天第一件事：学 HAVING 和窗口函数，做「每个部门前两名」
+4. 实际投入：待补
+5. 实际产物：dept.csv、load_dept.py、budget.sql、budget_vs_actual.csv，github.com/zenquanw/hustle
